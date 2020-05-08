@@ -24,9 +24,9 @@ int potPin1 = A10;
 int potPin2 = A11;
 int potPin3 = A18;
 int clickPin = 19;
-
 int ledPin = 33;
 
+// declare all your components here
 MIDIEncoder *enc;
 Button but(butPin1, midiChannel, 48, secondary, debug); 
 Button but2(butPin2, midiChannel, 49, secondary, debug);
@@ -62,7 +62,6 @@ void setup()
 
 void loop()
 {
-
   //delay(10);
   but.read(); 
   but2.read();
@@ -87,8 +86,8 @@ void loop()
   clk.read();
 
   usbMIDI.read(); // read all the incoming midi messages
-  
 }
+
 //====================================================================
 // event handlers
 void OnNoteOn(byte channel, byte note, byte velocity)
